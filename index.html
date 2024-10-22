@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBridge-Online kursus</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!--Font google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!--logo tittle-->
+    <link rel="icon" href="logo.webp" type="image/x-icon">
+</head>
+    <style>
+        .root{
+            --pr-colors: #151616;
+        }
+
+        body{
+            font-family: 'Poppins', sans-serif;
+            padding: 0;
+            margin: 0;
+            background-color: rgb(118, 164, 250);
+        }
+
+        .poppins-regular {
+          font-family: "Poppins", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+        }
+        
+        .poppins-medium {
+          font-family: "Poppins", sans-serif;
+          font-weight: 500;
+          font-style: normal;
+        }
+        
+        .poppins-semibold {
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          font-style: normal;
+        }
+        
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .nav-link {
+            font-size: 16px;
+        }
+
+        .nav-link.activer {
+            font-weight: 700;
+        }
+
+        .material-symbols-outlined {
+              font-variation-settings:
+              'FILL' 0,
+              'wght' 400,
+              'GRAD' 0,
+              'opsz' 24
+        }
+
+        /* Section untuk gambar latar full screen */
+        #welcome {
+              position: relative;
+              width: 100%;
+              height: 100vh; /* Full screen */
+              background-image: url('https://th.bing.com/th/id/OIP.5O-Q1v29rFWw9-ChmqJo4wAAAA?rs=1&pid=ImgDetMain.jpg'); /* Ganti dengan path gambar latar */
+              background-size: cover;
+              background-position: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }                        
+
+/* Blur background tanpa mempengaruhi teks */
+        #welcome::before {
+              content: '';
+                          position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-image: inherit; /* Menggunakan gambar yang sama */
+              background-size: cover;
+              background-position: center;
+              filter: blur(5px); /* Efek blur pada gambar latar */
+              z-index: 1;
+              opacity: 0.8; /* Membuat background sedikit transparan */
+            }
+
+        /* Styling teks di atas gambar blur */
+        .welcome-text {
+              position: relative;
+              z-index: 2; /* Menempatkan teks di atas gambar yang blur */
+              color: white;
+              text-align: center;
+              font-size: 48px;
+              font-weight: bold;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Bayangan teks agar lebih terbaca */
+            }
+
+            
+        #hero-tagline {
+          font-family: var(--pr-colors), "Poppins";
+          font-size: 50px;
+          font-weight: 700;
+          line-height: 60px;
+          width: 85%;
+          position: relative; 
+          padding-top: 50px;
+            }
+
+        h1{
+          margin-top: 0;
+        }
+
+        #layanan {
+          padding: 100px;
+        }
+
+        h2 {
+          font-size:  48px;
+          font-weight: 500;
+        }
+
+        .sub-title {
+          font-size: 15px;
+          color: #000;
+        }
+      
+        .card-layanan {
+          width: 100%;
+          border-radius: 5px;
+          background-color: rgb(145, 175, 173);
+          padding: 40px;
+          box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.05);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          text-align: center;
+          height: 100%;
+        }
+        
+        .circle-icon {
+          width: 100px;
+          height: 100px;
+          background-color: #fff;
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 20px;
+        }
+        
+        h3 {
+          font-size: 24px;
+          margin-top: 15px;
+          margin-bottom: 15px;
+        }
+        
+        p {
+          font-size: 16px;
+          margin-top: auto;
+        }
+        
+        #fitur {
+          padding-top: 5%;
+        }
+
+        .card-fitur {
+          width: 100%;
+          border-radius: 5px;
+          background-color: rgb(209, 240, 238);
+          box-shadow: 0 0 7px 3px rgb(29, 28, 28);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          text-align: center;
+          height: 100%;
+        }
+        .navbar ul li {
+          margin-right: 0px 15px;
+        }
+        header ul li a:hover {
+          background-color: #429396e7;
+
+        }
+        
+        .kontak-container {
+          width: 100%;
+          padding: 0 20px;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+
+        section {
+          padding-top: 80px; /* Sesuaikan nilai ini dengan tinggi header */
+        }
+        
+      </style>
+
+<body>
+  <header>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="logo.webp" alt="" width="30" class="d-inline-block align-text-top">
+            SkillBridge</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="active">
+                <a class="nav-link" aria-current="welcom" href="#">BERANDA</a>
+              </li>
+              <li class="active" >
+                <a class="nav-link"  href="#hero">ABOUT  US</a>
+              <li class="active" >
+                <a class="nav-link"  href="#layanan">LAYANAN</a>
+              </li>
+              <li class="active">
+                <a class="nav-link" href="#fitur">FITUR</a>
+              </li>
+              <li class="active">
+                <a class="nav-link" href="#kontak">KONTAK</a>
+              </li>
+            </ul>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+<section id="welcome">
+    <div class="welcome-text">
+        <h1>WELCOME TO SkillBridge</h1>
+    </div>
+</section>
+  
+
+<section id="hero" class="py-5">
+  <div class="container">
+    <div class="row text-center mb-4">
+      <div class="col-12">
+                <h2>ABout Us</h2>
+                <P><strong>SkillBridge</strong> adalah platform pembelajaran digital yang menyediakan akses mudah dan fleksibel ke berbagai kursus dengan dukungan tutor berpengalaman. Kami percaya bahwa setiap individu memiliki potensi untuk belajar dan berkembang, dan kami hadir untuk membantu mereka mencapai tujuan akademis dan profesional mereka.</P>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--layanan section-->
+<section id="layanan" class="py-5">
+  <div class="container">
+    <div class="row text-center mb-4">
+      <div class="col-12">
+        <h2>Layanan Kami</h2>
+        <span class="sub-title">SkillBridge hadir untuk solusi kursus mudah kamu</span>
+      </div>
+    </div>
+    <div class="row justify-content-between">
+      <!-- First Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card-layanan">
+          <div class="circle-icon mx-auto">
+            <img src="buku.jpg" alt="" width="60">
+          </div>
+          <h3>Materi Pembelajaran Interaktif</h3>
+          <p>Kami menyediakan akses ke berbagai sumber daya, termasuk video, kuis, dan latihan interaktif, untuk mendukung proses belajar dan meningkatkan pemahaman siswa.</p>
+        </div>
+      </div>
+      
+      <!-- Second Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card-layanan">
+          <div class="circle-icon mx-auto">
+            <img src="4.png" alt="" width="60">
+          </div>
+          <h3>Dukungan Tutor</h3>
+          <p>Tutor berpengalaman kami siap membantu siswa kapan saja melalui sesi konsultasi online dan tatap muka.Peserta dapat berinteraksi langsung dengan tutor ahli di bidangnya untuk mendapatkan klarifikasi dan panduan.</p>
+        </div>
+      </div>
+      
+      <!-- Third Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card-layanan">
+          <div class="circle-icon mx-auto">
+            <img src="sertifikat.png" alt="" width="80">
+          </div>
+          <h3>Sertifikasi</h3>
+          <p>Siswa yang menyelesaikan kursus akan mendapatkan sertifikat yang diakui secara profesional di berbagai industri.Sertifikat yang dikeluarkan sesuai dengan standar global, memperkuat profil profesional Anda.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+
+<section id="fitur" class="py-5">
+  <div class="container">
+      <div class="row text-center mb-4">
+        <div class="col-12">
+          <h2>FITUR</h2>
+          <span class="sub-title">Nikmati berbagai fitur menarik yang kami tawarkan</span>
+        </div>
+      </div>
+      <div class="row justify-content-between">
+        <!-- First Feature Card -->
+        <div class="col-md-4 mb-4">
+          <div class="card-fitur">
+            <div class="mx-auto">
+              <img src="learning.jpg" alt="" width="45">
+            </div>
+            <h3>Akses Materi 24/7</h3>
+            <p>Akses materi kursus kapan saja dan di mana saja tanpa batasan waktu. Belajar dengan kecepatanmu sendiri.</p>
+          </div>
+        </div>
+        
+        <!-- Second Feature Card -->
+        <div class="col-md-4 mb-4">
+          <div class="card-fitur">
+            <div class="mx-auto">
+              <img src="support.jpg" alt="" width="45">
+            </div>
+            <h3>Dukungan Online</h3>
+            <p>Tim dukungan kami siap membantu kamu setiap saat melalui layanan chat, email, atau telepon.</p>
+          </div>
+        </div>
+        
+        <!-- Third Feature Card -->
+        <div class="col-md-4 mb-4">
+          <div class="card-fitur">
+            <div class="mx-auto">
+              <img src="certification.jpg" alt="" width="45">
+            </div>
+            <h3>Sertifikasi Resmi</h3>
+            <p>Dapatkan sertifikat resmi yang diakui secara global,dilengkapi dengan kode verifikasi yang memungkinkan validasi kredensial secara online.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card-fitur">
+            <div class="mx-auto">
+              <img src="support.jpg" alt="" width="45">
+            </div>
+            <h3>Forum Diskusi atau Grup Chat</h3>
+            <p>Kursus menyediakan forum diskusi atau grup chat di mana peserta bisa mengajukan pertanyaan dan berdiskusi dengan tutor maupun peserta lain secara real-time.Dapatkan dukungan dari rekan-rekan peserta melalui diskusi yang saling membantu dan menginspirasi.
+            </p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="card-fitur">
+            <div class="mx-auto">
+              <img src="support.jpg" alt="" width="45">
+            </div>
+            <h3> Simulasi dan Praktik</h3>
+            <p>Tutor dapat memberikan simulasi atau latihan interaktif yang langsung dibimbing untuk memastikan peserta memahami materi secara praktis,Dapatkan kesempatan untuk berpartisipasi dalam simulasi yang meniru tantangan nyata dalam bidang studi, membantu memperkuat pemahaman.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card-fitur">
+            <div class="mx-auto">
+              <img src="support.jpg" alt="" width="45">
+            </div>
+            <h3>Materi Tambahan Dari Tutor</h3>
+            <p>Tutor sering kali tersedia untuk konsultasi atau pembelajaran tambahan pada waktu-waktu yang fleksibel, memungkinkan peserta memilih jadwal yang sesuai.Tutor memberikan panduan praktis dan tip tambahan untuk membantu peserta dalam penerapan konsep secara efektif.
+            </p>
+          </div>
+        </div>
+  </div><br>
+    
+
+      <!-- Kontak -->
+      <section id="kontak" class="py-5 bg-light"><br>
+        <div class="container-fluid">
+          <div class="row text-center mb-4">
+            <div class="col-12">
+              <h2>KONTAK</h2>
+              <span class="sub-title">Hubungi kami untuk informasi lebih lanjut</span>
+            </div>
+          </div><br>
+          <!-- Alamat Kami -->
+          <div class="row justify-content-center mb-4">
+            <div class="col-md-6 text-center">
+              <h5>Alamat Kami</h5>
+              <p>Jl. Teknologi No. 123, Jakarta, Indonesia</p>
+              <p>Email: info@skillbridge.com</p>
+              <p>Telepon: +62 123-456-7890</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        <!-- Footer -->
+        <footer><br>
+          <div class="container">
+              <p>&copy; 2024 SkillBridge. All Rights Reserved.</p>
+              <p><a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+          </div>
+      </footer>
+  
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+      
+</body>
+</html>
